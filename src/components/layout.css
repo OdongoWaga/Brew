@@ -1,0 +1,33 @@
+:root {
+  --Brown: #2d1ef1;
+  --Yellow: #ff9e89;
+  --Grey: #ece8dc;
+  --White: #fff;
+  --Dark: #222;
+}
+
+body {
+  background: var(--White);
+  color: var(--Dark);
+  font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Courier New", Courier, monospace !important;
+  letter-spacing: 0.25rem; !important
+}
+
+.text-yellow {
+    color: var(--Yellow);
+}
+
+.cart-icon {
+    cursor: pointer;
+    color: var(--mainYellow);
+    font-size: 2rem;
+}
