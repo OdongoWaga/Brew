@@ -41,3 +41,8 @@ h6 {
   background-position: center;
   background-size: cover;
 }
+
+.btn-yellow {
+  color: var(--Yellow);
+  border-color: var(--Yellow);
+}

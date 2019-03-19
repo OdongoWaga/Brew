@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 
 import SEO from "../components/seo"
 import Background from "../components/Background"
+import Info from "../components/Home/Info"
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -14,6 +15,7 @@ const IndexPage = ({ data }) => (
       title="Brewed"
       styleClass="default-background"
     />
+    <Info />
   </Layout>
 )
 
