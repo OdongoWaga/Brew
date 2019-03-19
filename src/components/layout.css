@@ -1,6 +1,6 @@
 :root {
   --Brown: #2d1ef1;
-  --Yellow: #ff9e89;
+  --Yellow: rgb(255, 158, 9);
   --Grey: #ece8dc;
   --White: #fff;
   --Dark: #222;
@@ -30,4 +30,14 @@ h6 {
   cursor: pointer;
   color: var(--Yellow);
   font-size: 2rem;
+}
+
+.default-background {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(255, 158, 9, 0.5), (255, 158, 9, 0.5));
+  background-position: center;
+  background-size: cover;
 }

@@ -11,4 +11,9 @@ const Background = ({ img, styleClass, title, children }) => {
   )
 }
 
+Background.defaultProps = {
+  title: "default title",
+  styleClass: "default-background",
+}
+
 export default Background
