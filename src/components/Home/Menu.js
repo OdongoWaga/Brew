@@ -2,12 +2,17 @@ import React, { Component } from "react"
 import Title from "../Globals/Title"
 import Img from "gatsby-image"
 
-const getCategories = (items = class Menu extends Component {
+const getCategories = items => {
+  return items
+}
+
+class Menu extends Component {
   constructor(props) {
     super(props)
     this.state = {
       items: props.items.edges,
       coffeeItems: props.items.edges,
+      categories: getCategories(),
     }
   }
 
@@ -83,6 +88,6 @@ const getCategories = (items = class Menu extends Component {
       )
     }
   }
-})
+}
 
 export default Menu
