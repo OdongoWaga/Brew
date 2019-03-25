@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Background from "../components/Background"
 import Menu from "../components/Home/Menu"
+import Info from "../components/Home/Info"
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -16,12 +17,19 @@ const IndexPage = ({ data }) => (
       styleClass="default-background"
     />
     <Info />
-    <Menu />
+    <Menu items={data.menu} />
   </Layout>
 )
 
 export const query = graphql`
   {
+    img: file(relativePath: { eq: "default-background.jpeg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
     menu: allContentfulCoffeeItem {
       edges {
         node {
