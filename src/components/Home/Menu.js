@@ -3,19 +3,36 @@ import Title from "../Globals/Title"
 import Img from "gatsby-image"
 
 const getCategories = items => {
-  return items
+  let tempItems = items.map(items => {
+    return items.node.category
+  })
+  let tempCategories = new Set(tempItems)
+  let categories = Array.from(tempCategories)
+  categories = ["all", ...categories]
+  return categories
 }
-
-class Menu extends Component {
+export default class Menu extends Component {
   constructor(props) {
     super(props)
     this.state = {
       items: props.items.edges,
       coffeeItems: props.items.edges,
-      categories: getCategories(),
+      categories: getCategories(props.items.edges),
     }
   }
-
+  handleItems = category => {
+    let tempItems = [...this.state.items]
+    if (category === "all") {
+      this.setState(() => {
+        return { coffeeItems: tempItems }
+      })
+    } else {
+      let items = tempItems.filter(({ node }) => node.category === category)
+      this.setState(() => {
+        return { coffeeItems: items }
+      })
+    }
+  }
   render() {
     if (this.state.items.length > 0) {
       return (
@@ -80,7 +97,7 @@ class Menu extends Component {
             <Title title="best of our menu" />
             <div className="row">
               <div className="col-10 col-sm-6 mx-auto text-center text-capitalize">
-                <h1> There are no items to display</h1>
+                <h1>there are no items to display</h1>
               </div>
             </div>
           </div>
@@ -89,5 +106,3 @@ class Menu extends Component {
     }
   }
 }
-
-export default Menu
