@@ -14,7 +14,7 @@ const getProducts = graphql`
           image {
             fluid(maxHeight: 426) {
               src
-              ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid
             }
           }
         }
@@ -31,6 +31,12 @@ const Products = () => {
         return (
           <section classname="py-5">
             <div className="container" />
+            <Title title="our products" />
+            <div className="row">
+              {data.products.edges.map(({ node: product }) => {
+                return <Product key={product.id} product={product} />
+              })}
+            </div>
           </section>
         )
       }}
