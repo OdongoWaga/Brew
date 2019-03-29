@@ -15,7 +15,7 @@ const Product = ({ product }) => {
             data-item-name={product.title}
             data-item-price={product.price}
             data-item-image={product.image.fluid.src}
-            data-item-url="https://"
+            data-item-url="https://quizzical-wright-74367e.netlify.com/"
           >
             Add to Cart
           </button>
